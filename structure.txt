@@ -1,76 +1,94 @@
-1. Define Your Components:
+1. Define Your Components: ✅
+
     -App Component:
 
         Manages the state for your application, including loading and error states.
         Manages routing for different pages using React Router.
+
     -Home Component:
 
         Displays a list of Star Wars blog posts.
         Uses the Fetch API or Axios to get blog posts from a Star Wars API.
+
     -Blog Post Component:
 
         Represents an individual blog post.
         Contains information like title, author, and a brief description.
         Includes an option to add the post to favorites.
+
     -Favorites Component:
 
         Displays the user's favorite blog posts.
         Retrieves the favorite posts from a context.
+
     -Blog Details Component:
 
         Shows detailed information about a selected blog post.
         Makes an additional API call to get detailed information about the selected post.
         Includes an option to add the post to favorites.
+
     -Header Component:
 
         Contains navigation links for home, favorites, and other pages.
         Reflects the current route.
+
     -Contexts:
 
         *BlogContext:
 
             Manages the state related to blog posts.
             Includes functions to fetch blog posts, update favorites, etc.
+
         *FavoritesContext:
 
             Manages the state of the user's favorite blog posts.
             Provides functions to add/remove favorites.
 
 2. Set Up Routing:
+
     Use React Router to handle navigation between different pages.
     Define routes for the home page, favorites page, and blog details page.
 
 3. Implement Fetch Functionality:
+
     In the Home component, use the Fetch API or Axios to retrieve a list of Star Wars blog posts from the selected API.
 
 4. Loading and Error States:
+
     Implement loading and error states in the App component to manage the asynchronous nature of API calls.
     Display loading indicators and error messages as needed.
 
 5. Create Blog Post Components:
+
     Develop the BlogPost component to display individual blog posts.
     Include an option to add a post to favorites.
 
 6. Implement Contexts:
+
     Create the BlogContext and FavoritesContext.
     BlogContext manages the state for the list of blog posts and provides functions to fetch and update the list.
     FavoritesContext manages the state for the user's favorite blog posts and provides functions to update the favorites list.
 
 7. Connect Components with Contexts:
+
     Use the useContext hook in components that need access to the state managed by BlogContext and FavoritesContext.
     Update the UI based on the data provided by these contexts.
 
 8. Handle Favorites:
+
     Implement functionality in the BlogPost and BlogDetails components to add/remove posts to/from favorites.
     Display the user's favorite posts in the Favorites component.
 
 9. Create Blog Details Page:
+
     Develop the BlogDetails component to display detailed information about a selected blog post.
     Make an additional API call to get detailed information about the selected post.
     Include an option to add the post to favorites.
 
 10. Navigation:
+
     Use the Header component to handle navigation between different pages.
 
 11. Styling:
+
     Apply styles to your components to make your Star Wars blog visually appealing.
