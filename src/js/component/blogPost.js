@@ -28,7 +28,7 @@ export const BlogPost = ({ type }) => {
 
     return (
         <div>
-            <h2>{type.charAt(0).toUpperCase() + type.slice(1)}</h2>
+            <h2 className="text-start mx-auto w-75 mb-4 mt-5">{type.charAt(0).toUpperCase() + type.slice(1)}</h2>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -41,7 +41,7 @@ export const BlogPost = ({ type }) => {
                                 <img src="https://static.wikia.nocookie.net/shaniverse/images/7/7f/Grogu.jpg/revision/latest?cb=20201222173404" className="card-img-top" alt="star wars item" />
                                 <div className="card-body">
                                     <h5 className="card-title">{item.name}</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text">Some quick example text to build on the card title</p>
                                     <a href="#" className="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
