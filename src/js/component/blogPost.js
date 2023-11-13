@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+const url = 'https://www.swapi.tech/api';
+
 export const BlogPost = ({ type }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -7,7 +9,7 @@ export const BlogPost = ({ type }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://www.swapi.tech/api/${type}`);
+                const response = await fetch(`${url}/${type}`);
                 const result = await response.json();
 
                 // Check if the result contains a "results" property and it's an array
@@ -41,7 +43,22 @@ export const BlogPost = ({ type }) => {
                                 <img src="https://static.wikia.nocookie.net/shaniverse/images/7/7f/Grogu.jpg/revision/latest?cb=20201222173404" className="card-img-top" alt="star wars item" />
                                 <div className="card-body">
                                     <h5 className="card-title">{item.name}</h5>
-                                    <p className="card-text">Some quick example text to build on the card title</p>
+                                    <p className="card-text">
+                                        {(() => {
+                                            try {
+                                                const urlObject = new URL(`${url}/${type}`);
+                                                const pathSegments = urlObject.pathname.split('/');
+                                                const resourceId = pathSegments[pathSegments.length - 1];
+
+                                                return (
+                                                    <span>{`Resource ID: ${resourceId}`}</span>
+                                                );
+                                            } catch (error) {
+                                                console.error('Error parsing URL:', error);
+                                                return null;
+                                            }
+                                        })()}
+                                    </p>
                                     <a href="#" className="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
