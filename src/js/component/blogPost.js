@@ -32,9 +32,22 @@ export const BlogPost = ({ type }) => {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <ul>
+                <ul className="mx-auto w-75" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {data.map(item => (
-                        <li key={item.uid}>{item.name}</li>
+
+
+                        <li key={item.uid}>
+                            <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
+                                <img src="https://static.wikia.nocookie.net/shaniverse/images/7/7f/Grogu.jpg/revision/latest?cb=20201222173404" className="card-img-top" alt="star wars item" />
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </li>
+
+
                     ))}
                 </ul>
             )}
