@@ -1,6 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			///////////////////////// Characters (people) /////////////////////			
+			charactersData: [],
+
+
 			demo: [
 				{
 					title: "FIRST",
@@ -12,11 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			],
-			///////////////////////// Characters (people) /////////////////////			
-			allCharactersData: [],
-
-
+			]
+			
 
 		},
 		actions: {
@@ -49,23 +50,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//get characters with people endpoint
 			getAllCharactersData: async () => {
 				try {
-					// Code that might throw an error
-					const store = getStore()
-					await fetch(`https://swapi.tech/api/people`)
-						.then(res => res.json())
-						.then(data => {
-							if (store.charactersData.length == 0) {
-								store.charactersData.push(data.results)
-							}
-						})
-					setStore({ store: store.allCharactersData })
-					setStore({ store: store.charactersData })
-
+					const store = getStore();
+					const response = await fetch(`https://swapi.tech/api/people`);
+					const data = await response.json();
+			
+					// Assuming charactersData is the correct array
+					if (store.charactersData.length === 0) {
+						setStore({ ...store, charactersData: [...store.charactersData, ...data.results] });
+					}
 				} catch (e) {
-					// Error handling code
-					console.log("getAllCharactersData ERROR ==", e)
+					console.log("getAllCharactersData ERROR =", e);
 				}
 			},
+
 
 
 

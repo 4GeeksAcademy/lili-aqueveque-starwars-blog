@@ -40,7 +40,7 @@ export const Planets = () => {
 
                         <li key={item.uid}>
                             <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
-                                <img src="https://static.wikia.nocookie.net/shaniverse/images/7/7f/Grogu.jpg/revision/latest?cb=20201222173404" className="card-img-top" alt="star wars item" />
+                                <img src="https://static.wikia.nocookie.net/starwars/images/7/72/Teth-TVE.png/revision/latest?cb=20190423045047" className="card-img-top" alt="star wars item" />
                                 <div className="card-body">
                                     <h5 className="card-title">{item.name}</h5>
                                     <p className="card-text">
