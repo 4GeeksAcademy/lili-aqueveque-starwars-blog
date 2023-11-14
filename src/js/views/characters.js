@@ -10,7 +10,7 @@ export const Characters = () => {
 
     return (
         <div>
-            <h2 className="text-start mx-auto w-75 mb-4 mt-5">Characters</h2>
+            <h1 className="text-start mx-auto w-75 mb-4 mt-5">Characters</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -30,7 +30,7 @@ export const Characters = () => {
                                     <p className="card-text">height: {person.result.properties.height}</p>
                                     <p className="card-text">birth year: {person.result.properties.birth_year}</p>
                                     <Link to={'/about/characters/' + person.result.uid}>
-                                        <span className="btn btn-primary learn-more">Learn more!</span>
+                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>

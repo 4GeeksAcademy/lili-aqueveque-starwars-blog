@@ -9,7 +9,7 @@ export const Planets = () => {
 
     return (
         <div>
-            <h2 className="text-start mx-auto w-75 mb-4 mt-5">Planets</h2>
+            <h1 className="text-start mx-auto w-75 mb-4 mt-5">Planets</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -32,7 +32,7 @@ export const Planets = () => {
                                     <p className="card-text">terrain: {planet.result.properties.terrain}</p>
                                     <p className="card-text">orbital period: {planet.result.properties.orbital_period}</p>
                                     <Link to={'/about/planets/' + planet.result.uid}>
-                                        <span className="btn btn-primary learn-more">Learn more!</span>
+                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>

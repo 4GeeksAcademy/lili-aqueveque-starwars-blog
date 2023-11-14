@@ -10,7 +10,7 @@ export const Vehicles = () => {
 
     return (
         <div>
-            <h2 className="text-start mx-auto w-75 mb-4 mt-5">Vehicles</h2>
+            <h1 className="text-start mx-auto w-75 mb-4 mt-5">Vehicles</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -30,7 +30,7 @@ export const Vehicles = () => {
                                     <p className="card-text">length: {vehicle.result.properties.length}</p>
                                     <p className="card-text">passengers: {vehicle.result.properties.passengers}</p>
                                     <Link to={'/about/vehicles/' + vehicle.result.uid}>
-                                        <span className="btn btn-primary learn-more">Learn more!</span>
+                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>
