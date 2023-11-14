@@ -1,32 +1,9 @@
-import React, { useState, useEffect } from 'react';
-
-const url = 'https://www.swapi.tech/api/planets';
+import React, { useContext } from 'react';
+import { Context } from '../store/appContext';
 
 export const Planets = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${url}`);
-                const result = await response.json();
-
-                // Check if the result contains a "results" property and it's an array
-                if (result.results && Array.isArray(result.results)) {
-                    setData(result.results);
-                } else {
-                    console.error('Invalid data format:', result);
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
+    const { store, actions } = useContext(Context);
+    const { loading, planets } = store; // Destructure loading from store
 
     return (
         <div>
@@ -35,17 +12,17 @@ export const Planets = () => {
                 <p>Loading...</p>
             ) : (
                 <ul className="mx-auto w-75" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
-                    {data.map(item => (
+                    {planets.map(planet => (
 
 
-                        <li key={item.uid}>
+                        <li key={planet.uid}>
                             <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
                                 <img src="https://static.wikia.nocookie.net/starwars/images/7/72/Teth-TVE.png/revision/latest?cb=20190423045047" className="card-img-top" alt="star wars item" />
                                 <div className="card-body">
-                                    <h5 className="card-title">{item.name}</h5>
-                                    <p className="card-text">
-                                        {item.uid}
-                                    </p>
+                                    <h5 className="card-title">{planet.result.properties.name}</h5>
+                                    <p className="card-text">climate: {planet.result.properties.climate}</p>
+                                    <p className="card-text">terrain: {planet.result.properties.terrain}</p>
+                                    <p className="card-text">orbital period: {planet.result.properties.orbital_period}</p>
                                     <a href="#" className="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>

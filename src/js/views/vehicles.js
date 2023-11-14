@@ -1,32 +1,10 @@
-import React, { useState, useEffect } from 'react';
-
-const url = 'https://www.swapi.tech/api/vehicles';
+import React, { useContext } from 'react';
+import { Context } from '../store/appContext';
 
 export const Vehicles = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { store, actions } = useContext(Context);
+    const { loading, vehicles } = store; // Destructure loading from store
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${url}`);
-                const result = await response.json();
-
-                // Check if the result contains a "results" property and it's an array
-                if (result.results && Array.isArray(result.results)) {
-                    setData(result.results);
-                } else {
-                    console.error('Invalid data format:', result);
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
 
     return (
         <div>
@@ -35,17 +13,16 @@ export const Vehicles = () => {
                 <p>Loading...</p>
             ) : (
                 <ul className="mx-auto w-75" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
-                    {data.map(item => (
+                    {vehicles.map((vehicle) => (
 
-
-                        <li key={item.uid}>
+                        <li key={vehicle.uid}>
                             <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
                                 <img src="https://qph.cf2.quoracdn.net/main-qimg-1580491beab4d3867080e27563819ff4-lq" className="card-img-top" alt="star wars item" />
                                 <div className="card-body">
-                                    <h5 className="card-title">{item.name}</h5>
-                                    <p className="card-text">
-                                        {item.uid}
-                                    </p>
+                                    <h5 className="card-title">{vehicle.result.properties.name}</h5>
+                                    <p className="card-text">model: {vehicle.result.properties.model}</p>
+                                    <p className="card-text">length: {vehicle.result.properties.length}</p>
+                                    <p className="card-text">passengers: {vehicle.result.properties.passengers}</p>
                                     <a href="#" className="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
