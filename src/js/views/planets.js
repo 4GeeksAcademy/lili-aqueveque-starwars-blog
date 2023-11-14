@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
+import { Link } from "react-router-dom";
 import groguPlaceholder from '../../img/blog-grogu.jpg';
 
 export const Planets = () => {
@@ -30,7 +31,9 @@ export const Planets = () => {
                                     <p className="card-text">climate: {planet.result.properties.climate}</p>
                                     <p className="card-text">terrain: {planet.result.properties.terrain}</p>
                                     <p className="card-text">orbital period: {planet.result.properties.orbital_period}</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                                    <Link to={'/about/planets/' + planet.result.uid}>
+                                        <span className="btn btn-primary learn-more">Learn more!</span>
+                                    </Link>
                                 </div>
                             </div>
                         </li>

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
+import { Link } from "react-router-dom";
+import groguPlaceholder from '../../img/blog-grogu.jpg';
 
 export const Characters = () => {
     const { store, actions } = useContext(Context);
@@ -27,7 +29,9 @@ export const Characters = () => {
                                     <p className="card-text">weight: {person.result.properties.mass}</p>
                                     <p className="card-text">height: {person.result.properties.height}</p>
                                     <p className="card-text">birth year: {person.result.properties.birth_year}</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                                    <Link to={'/about/characters/' + person.result.uid}>
+                                        <span className="btn btn-primary learn-more">Learn more!</span>
+                                    </Link>
                                 </div>
                             </div>
                         </li>
