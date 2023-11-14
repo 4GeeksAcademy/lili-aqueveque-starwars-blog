@@ -1,5 +1,4 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import { BlogPost } from "../component/blogPost";
 import "../../styles/home.css";
 

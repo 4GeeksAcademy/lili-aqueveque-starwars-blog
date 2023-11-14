@@ -17,7 +17,11 @@ export const Vehicles = () => {
 
                         <li key={vehicle.uid}>
                             <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
-                                <img src="https://qph.cf2.quoracdn.net/main-qimg-1580491beab4d3867080e27563819ff4-lq" className="card-img-top" alt="star wars item" />
+                                <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.result.uid}.jpg`}
+                                    onError={(e) => {
+                                        e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
+                                    }}
+                                    className="card-img-top" alt="star wars vehicle" />
                                 <div className="card-body">
                                     <h5 className="card-title">{vehicle.result.properties.name}</h5>
                                     <p className="card-text">model: {vehicle.result.properties.model}</p>

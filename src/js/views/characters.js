@@ -17,7 +17,11 @@ export const Characters = () => {
 
                         <li key={person.uid}>
                             <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
-                                <img src="https://static.wikia.nocookie.net/shaniverse/images/7/7f/Grogu.jpg/revision/latest?cb=20201222173404" className="card-img-top" alt="star wars item" />
+                                <img src={`https://starwars-visualguide.com/assets/img/characters/${person.result.uid}.jpg`}
+                                    onError={(e) => {
+                                        e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
+                                    }}
+                                    className="card-img-top" alt="star wars character" />
                                 <div className="card-body">
                                     <h5 className="card-title">{person.result.properties.name}</h5>
                                     <p className="card-text">weight: {person.result.properties.mass}</p>

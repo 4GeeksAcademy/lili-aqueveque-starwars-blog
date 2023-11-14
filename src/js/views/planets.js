@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
+import groguPlaceholder from '../../img/blog-grogu.jpg';
 
 export const Planets = () => {
     const { store, actions } = useContext(Context);
@@ -17,7 +18,13 @@ export const Planets = () => {
 
                         <li key={planet.uid}>
                             <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
-                                <img src="https://static.wikia.nocookie.net/starwars/images/7/72/Teth-TVE.png/revision/latest?cb=20190423045047" className="card-img-top" alt="star wars item" />
+                                <img
+                                    src={`https://starwars-visualguide.com/assets/img/planets/${planet.result.uid}.jpg`}
+                                    onError={(e) => {
+                                        e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
+                                    }}
+                                    className="card-img-top" alt="star wars planet"
+                                />
                                 <div className="card-body">
                                     <h5 className="card-title">{planet.result.properties.name}</h5>
                                     <p className="card-text">climate: {planet.result.properties.climate}</p>
