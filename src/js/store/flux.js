@@ -1,8 +1,12 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			///////////////////////// Characters (people) /////////////////////			
-			charactersData: [],
+		
+			people: [],
+			planets: [],
+			vehicles: [],
+			///////////////////////////edit later///////////////////////
+			favorites:[],
 
 
 			demo: [
@@ -47,19 +51,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 
-			//get characters with people endpoint
-			getAllCharactersData: async () => {
+			//get people, planets and vehicles with respective endpoints:
+			getAllData: async () => {
 				try {
-					const store = getStore();
-					const response = await fetch(`https://swapi.tech/api/people`);
-					const data = await response.json();
+					const peopleResponse = await fetch("https://swapi.dev/api/people");
+					const peopleData = await peopleResponse.json();
+					setStore({ people: peopleData.results });
 			
-					// Assuming charactersData is the correct array
-					if (store.charactersData.length === 0) {
-						setStore({ ...store, charactersData: [...store.charactersData, ...data.results] });
-					}
-				} catch (e) {
-					console.log("getAllCharactersData ERROR =", e);
+					const planetsResponse = await fetch("https://swapi.dev/api/planets");
+					const planetsData = await planetsResponse.json();
+					setStore({ planets: planetsData.results });
+			
+					const vehiclesResponse = await fetch("https://swapi.dev/api/vehicles");
+					const vehiclesData = await vehiclesResponse.json();
+					setStore({ vehicles: vehiclesData.results });
+				} catch (error) {
+					console.error('Error loading data:', error);
 				}
 			},
 
