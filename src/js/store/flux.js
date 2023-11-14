@@ -12,7 +12,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			///////////////////////// Characters (people) /////////////////////			
+			allCharactersData: [],
+
+
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,7 +42,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+
+
+
+			//get characters with people endpoint
+			getAllCharactersData: async () => {
+				try {
+					// Code that might throw an error
+					const store = getStore()
+					await fetch(`https://swapi.tech/api/people`)
+						.then(res => res.json())
+						.then(data => {
+							if (store.charactersData.length == 0) {
+								store.charactersData.push(data.results)
+							}
+						})
+					setStore({ store: store.allCharactersData })
+					setStore({ store: store.charactersData })
+
+				} catch (e) {
+					// Error handling code
+					console.log("getAllCharactersData ERROR ==", e)
+				}
+			},
+
+
+
+
+
+
+
+
 		}
 	};
 };

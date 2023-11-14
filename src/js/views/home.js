@@ -6,9 +6,7 @@ import "../../styles/home.css";
 export const Home = () => {
 	return (
 		<div className="text-center mt-5">
-			<BlogPost type="people" /> {/*characters component*/}
-			<BlogPost type="vehicles" />
-			<BlogPost type="planets" />
+			<BlogPost />
 		</div>
 	)
 };
