@@ -10,7 +10,12 @@ import "../../styles/demo.css";
 
 export const About = () => {
 	const { store, actions } = useContext(Context);
-	const { type, id } = useParams();
+	const { type, id, people } = useParams();
+	//debugging log:
+	console.log(store.people[id]);
+
+
+
 	let fields;
 
 
@@ -109,7 +114,6 @@ export const About = () => {
 						</div>
 					</div>
 				</div>
-
 
 
 				<div className="container mt-4">
