@@ -11,7 +11,9 @@ export const Planets = () => {
         <div>
             <h1 className="text-start mx-auto w-75 mb-4 mt-5">Planets</h1>
             {loading ? (
-                <p>Loading...</p>
+                <div className="spinner-border text-warning" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
             ) : (
                 <ul className="mx-auto w-75" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {planets.map(planet => (
