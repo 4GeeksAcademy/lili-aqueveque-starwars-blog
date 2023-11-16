@@ -37,6 +37,7 @@ export const Planets = () => {
                                     <Link to={'/aboutPlanets/' + planet.result.uid}>
                                         <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
+                                    <button onClick={() => { !store.favorites.includes(planet.result.properties.name) ? actions.addFavorite(planet.result.properties.name) : "" }} type="button" className={`btn heart-button ${store.favorites.includes(planet.result.properties.name) ? "btn-light" : "btn-outline-light"}`}><i className="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </li>

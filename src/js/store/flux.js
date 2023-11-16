@@ -98,12 +98,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			addFavorite: (item) => {
 				const store = getStore();
-				const favorite = store.favorite.concat(item);
+				const favorite = store.favorites.concat(item);
 				setStore({ favorites: favorite });
 				console.log(favorite);
 			}
-
-
 
 
 

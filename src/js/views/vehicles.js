@@ -32,9 +32,10 @@ export const Vehicles = () => {
                                     <p className="card-text">model: {vehicle.result.properties.model}</p>
                                     <p className="card-text">length: {vehicle.result.properties.length}</p>
                                     <p className="card-text">passengers: {vehicle.result.properties.passengers}</p>
-                                    <Link to={'/aboutP/' + vehicle.result.uid}>
+                                    <Link to={'/aboutVehicles/' + vehicle.result.uid}>
                                         <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
+                                    <button onClick={() => { !store.favorites.includes(vehicle.result.properties.name) ? actions.addFavorite(vehicle.result.properties.name) : "" }} type="button" className={`btn heart-button ${store.favorites.includes(vehicle.result.properties.name) ? "btn-light" : "btn-outline-light"}`}><i className="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </li>
