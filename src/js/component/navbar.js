@@ -13,7 +13,7 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 					<Link to="/demo">
-						<button className="btn" style={{ color: 'black', backgroundColor: 'yellow' }}>Check the Context in action</button>
+						<button className="btn favorites me-5" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Favorites</button>
 					</Link>
 				</div>
 			</nav>

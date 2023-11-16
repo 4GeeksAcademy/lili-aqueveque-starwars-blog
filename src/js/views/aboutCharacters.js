@@ -7,7 +7,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const About = () => {
+export const AboutCharacters = () => {
 	const params = useParams();
 	const { store, actions } = useContext(Context);
 
