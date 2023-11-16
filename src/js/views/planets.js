@@ -10,7 +10,7 @@ export const Planets = () => {
 
     return (
         <div>
-            <h1 className="text-start mx-auto w-75 mb-4 mt-5">Planets</h1>
+            <h1 className="text-start mx-auto w-75 mb-4 mt-5 group-title">Planets</h1>
             {loading ? (
                 <div className="spinner-border text-warning" role="status">
                     <span className="visually-hidden">Loading...</span>

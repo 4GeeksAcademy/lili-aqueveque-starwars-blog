@@ -11,7 +11,7 @@ export const Vehicles = () => {
 
     return (
         <div>
-            <h1 className="text-start mx-auto w-75 mb-4 mt-5">Vehicles</h1>
+            <h1 className="text-start mx-auto w-75 mb-4 mt-5 group-title">Vehicles</h1>
             {loading ? (
                 <div className="spinner-border text-warning" role="status">
                     <span className="visually-hidden">Loading...</span>
