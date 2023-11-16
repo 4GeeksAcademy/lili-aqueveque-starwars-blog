@@ -69,6 +69,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
+			getVehiclesDetails: (id, setParam) => {
+				const store = getStore();
+
+				fetch(`https://www.swapi.tech/api/vehicles/${id}`).then(resp => resp.json())
+					.then(data => {
+						setParam(data)
+					})
+
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
 
 
 

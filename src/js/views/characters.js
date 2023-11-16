@@ -33,7 +33,7 @@ export const Characters = () => {
                                     <p className="card-text">height: {person.result.properties.height}</p>
                                     <p className="card-text">birth year: {person.result.properties.birth_year}</p>
                                     <Link to={'/aboutCharacters/' + person.result.uid}>
-                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
+                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>

@@ -35,7 +35,7 @@ export const Planets = () => {
                                     <p className="card-text">terrain: {planet.result.properties.terrain}</p>
                                     <p className="card-text">orbital period: {planet.result.properties.orbital_period}</p>
                                     <Link to={'/about/planets/' + planet.result.uid}>
-                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
+                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>

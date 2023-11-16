@@ -32,8 +32,8 @@ export const Vehicles = () => {
                                     <p className="card-text">model: {vehicle.result.properties.model}</p>
                                     <p className="card-text">length: {vehicle.result.properties.length}</p>
                                     <p className="card-text">passengers: {vehicle.result.properties.passengers}</p>
-                                    <Link to={'/about/vehicles/' + vehicle.result.uid}>
-                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
+                                    <Link to={'/aboutVehicles/' + vehicle.result.uid}>
+                                        <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>
