@@ -19,6 +19,21 @@ export const Navbar = () => {
 						<i className="far fa-star"></i>&nbsp;Favorites&nbsp;&nbsp;
 						<p className=" favs-counter m-0"><strong>{store.favorites.length}</strong></p>
 					</button>
+
+
+					<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+						{(store.favorites && store.favorites.length > 0) ?
+							store.favorites.map((item, index) => (
+								<Link to={item && item.path ? ("/" + item.path + "/" + item.index) : ""} style={{ textDecoration: 'none' }}>
+									<li key={item}>
+										<a className="dropdown-item d-flex justify-content-between">{item}<i onClick={() => actions.deleteFavorite(index)} className="trash fas fa-trash-alt mt-1 ms-3"></i></a>
+									</li>
+								</Link>
+							))
+							: <li className="text-center">Add Favorites Here!</li>}
+					</ul>
+
+
 				</div>
 			</nav >
 		</div >

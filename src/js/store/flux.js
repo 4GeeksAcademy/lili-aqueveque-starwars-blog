@@ -101,6 +101,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const favorite = store.favorites.concat(item);
 				setStore({ favorites: favorite });
 				console.log(favorite);
+			},
+
+			deleteFavorite: (index) => {
+				const store = getStore();
+				const favorite = store.favorites.filter((c, i) => {
+					return index !== i
+				});
+				setStore({ favorites: favorite });
 			}
 
 

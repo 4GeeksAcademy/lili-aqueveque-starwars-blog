@@ -35,7 +35,9 @@ export const Characters = () => {
                                     <Link to={'/aboutCharacters/' + person.result.uid}>
                                         <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
-                                    <button onClick={() => { !store.favorites.includes(person.result.properties.name) ? actions.addFavorite(person.result.properties.name) : "" }} type="button" className={`btn heart-button ${store.favorites.includes(person.result.properties.name) ? "btn-light" : "btn-outline-light"}`}><i className="far fa-heart"></i></button>
+                                    <button onClick={() => { 
+                                        !store.favorites.includes(person.result.properties.name) ? 
+                                        actions.addFavorite(person.result.properties.name)  : "" }} type="button" className={`btn heart-button ${store.favorites.includes(person.result.properties.name) ? "btn-light" : "btn-outline-light"}`}><i className="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </li>
