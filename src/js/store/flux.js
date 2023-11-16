@@ -82,6 +82,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
+			getPlanetsDetails: (id, setParam) => {
+				const store = getStore();
+
+				fetch(`https://www.swapi.tech/api/planets/${id}`).then(resp => resp.json())
+					.then(data => {
+						setParam(data)
+					})
+
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
 
 
 
