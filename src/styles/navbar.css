@@ -5,8 +5,12 @@
     border-color: rgb(45, 45, 45);
     height: 135px;
 }
-.favorites-cart{
-    background-color: #F8AC0F;
+.favorites-cart {
+    background: linear-gradient(to right, black, rgb(139, 0, 0), black);
     margin-right: 30px;
     border: 2px solid rgb(37, 22, 22);
+    color: #F8AC0F;
+}
+.favorite-box{
+    font-family: 'Star Wars';
 }

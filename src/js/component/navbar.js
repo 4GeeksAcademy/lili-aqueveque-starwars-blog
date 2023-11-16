@@ -16,7 +16,7 @@ export const Navbar = () => {
 				<div className="ml-auto dropdown">
 
 					<button className="inner-favorites favorites-cart" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-						<i className="far fa-star"></i>&nbsp;Favorites&nbsp;&nbsp;
+						<i className="far fa-star"></i><p className="favorite-box">&nbsp;Favorites&nbsp;&nbsp;</p>
 						<p className=" favs-counter m-0"><strong>{store.favorites.length}</strong></p>
 					</button>
 

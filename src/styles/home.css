@@ -4,3 +4,6 @@ body {
     background-attachment: fixed;
     color: white;
 }
+.heart-button{
+    margin-left: 15px;
+}
