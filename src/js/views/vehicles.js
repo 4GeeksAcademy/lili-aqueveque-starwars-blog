@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from "react-router-dom";
 import groguPlaceholder from '../../img/blog-grogu.jpg';
+import "../../styles/characters.css";
 
 export const Vehicles = () => {
     const { store, actions } = useContext(Context);
@@ -16,11 +17,11 @@ export const Vehicles = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <ul className="mx-auto w-75" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
+                <ul className="mx-auto w-75 h-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {vehicles.map((vehicle) => (
 
                         <li key={vehicle.uid}>
-                            <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
+                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.7)' }}>
                                 <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.result.uid}.jpg`}
                                     onError={(e) => {
                                         e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces

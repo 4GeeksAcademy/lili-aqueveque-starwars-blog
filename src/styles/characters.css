@@ -1,0 +1,28 @@
+.h-scrollbar {
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.h-scrollbar div {
+    width: 250px;
+}
+
+.h-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 11px;
+}
+ 
+/* Track */
+.h-scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+.h-scrollbar::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.548); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); 
+}

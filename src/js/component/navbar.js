@@ -1,18 +1,22 @@
 import React from "react";
-import starWarsLogo from "../../img/Star-Wars-symbol.jpg";
+import starWarsLogo from "../../img/logo-starwars-2.png";
+import starWarsLogo3 from "../../img/logo-starwars-3.png";
 import { Link } from "react-router-dom";
+import "../../styles/navbar.css";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-dark mb-3 mx-auto w-75" style={{ backgroundColor: 'black' }}>
-			<Link to="/">
-				<img className="navbar-brand mb-0 h1" src={starWarsLogo} width="95px" />
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn" style={{ color: 'black', backgroundColor: 'yellow' }}>Check the Context in action</button>
+		<div>
+			<nav className="navbar-image navbar navbar-expand-lg justify-content-between">
+				<Link to="/">
+					<img className="navbar-brand mb-0 h1 ms-5" src={starWarsLogo3} width="135px" />
 				</Link>
-			</div>
-		</nav>
+				<div className="ml-auto">
+					<Link to="/demo">
+						<button className="btn" style={{ color: 'black', backgroundColor: 'yellow' }}>Check the Context in action</button>
+					</Link>
+				</div>
+			</nav>
+		</div>
 	);
 };

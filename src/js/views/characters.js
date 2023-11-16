@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from "react-router-dom";
 import groguPlaceholder from '../../img/blog-grogu.jpg';
+import "../../styles/characters.css";
 
 export const Characters = () => {
     const { store, actions } = useContext(Context);
@@ -16,11 +17,11 @@ export const Characters = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <ul className="mx-auto w-75" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
+                <ul className="mx-auto w-75 h-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {people.map((person) => (
 
                         <li key={person.uid}>
-                            <div className="card bg-dark" style={{ width: '18rem', marginRight: '2rem' }}>
+                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.7)' }}>
                                 <img src={`https://starwars-visualguide.com/assets/img/characters/${person.result.uid}.jpg`}
                                     onError={(e) => {
                                         e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
@@ -31,16 +32,20 @@ export const Characters = () => {
                                     <p className="card-text">weight: {person.result.properties.mass}</p>
                                     <p className="card-text">height: {person.result.properties.height}</p>
                                     <p className="card-text">birth year: {person.result.properties.birth_year}</p>
-                                    <Link to={'/about/characters/' + person.result.uid}>
+                                    <Link to={'/aboutCharacters/' + person.result.uid}>
                                         <span className="btn learn-more" style={{ color: 'black', backgroundColor: 'yellow' }}>Learn more!</span>
                                     </Link>
                                 </div>
                             </div>
                         </li>
+
                     ))}
                 </ul>
             )}
         </div>
+
+
+
     );
 }
 

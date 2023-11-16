@@ -20,8 +20,9 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 
-			state.actions.getAllData()
+			state.actions.getAllData();
 
+			console.log("Full store after loading:", state.store);
 		}, []);
 
 
