@@ -16,12 +16,12 @@ export const Planets = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <ul className="mx-auto w-75 h-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
+                <ul className="mx-auto w-75 h-scrollbar planets-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {planets.map(planet => (
 
 
                         <li key={planet.uid}>
-                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.7)' }}>
+                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.6)' }}>
                                 <img
                                     src={`https://starwars-visualguide.com/assets/img/planets/${planet.result.uid}.jpg`}
                                     onError={(e) => {
@@ -29,7 +29,7 @@ export const Planets = () => {
                                     }}
                                     className="card-img-top" alt="star wars planet"
                                 />
-                                <div className="card-body">
+                                <div className="card-body" style={{ height: '260px' }}>
                                     <h5 className="card-title">{planet.result.properties.name}</h5>
                                     <p className="card-text">climate: {planet.result.properties.climate}</p>
                                     <p className="card-text">terrain: {planet.result.properties.terrain}</p>

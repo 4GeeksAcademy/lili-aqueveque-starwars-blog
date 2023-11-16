@@ -22,7 +22,7 @@ export const AboutCharacters = () => {
 			{param && param.result.properties.name ? (
 
 				<div>
-					<div className="card mb-4 mx-auto mt-4" style={{ maxWidth: '1300px', backgroundColor: 'rgba(29, 30, 31, 0.7)' }} >
+					<div className="card mb-4 mx-auto mt-4" style={{ maxWidth: '1300px', backgroundColor: 'rgba(29, 30, 31, 0.6)' }} >
 						<div className="row g-0">
 							<div className="col-md-4">
 								<img src={`https://starwars-visualguide.com/assets/img/characters/${param.result.uid}.jpg`} className="img-fluid rounded-start" alt="Star wars item" />
@@ -71,7 +71,7 @@ export const AboutCharacters = () => {
 			) : ""}
 
 			<Link to="/">
-				<button className="btn btn-primary ms-5">Back home</button>
+				<button className="btn btn-primary back-home">Back home</button>
 			</Link>
 
 

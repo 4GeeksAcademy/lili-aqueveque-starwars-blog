@@ -17,11 +17,11 @@ export const Characters = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <ul className="mx-auto w-75 h-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
+                <ul className="mx-auto w-75 h-scrollbar characters-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {people.map((person) => (
 
                         <li key={person.uid}>
-                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.7)' }}>
+                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.6)' }}>
                                 <img src={`https://starwars-visualguide.com/assets/img/characters/${person.result.uid}.jpg`}
                                     onError={(e) => {
                                         e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
@@ -35,9 +35,10 @@ export const Characters = () => {
                                     <Link to={'/aboutCharacters/' + person.result.uid}>
                                         <span className="btn learn-more" style={{ color: 'black', backgroundColor: '#F8AC0F' }}>Learn more!</span>
                                     </Link>
-                                    <button onClick={() => { 
-                                        !store.favorites.includes(person.result.properties.name) ? 
-                                        actions.addFavorite(person.result.properties.name)  : "" }} type="button" className={`btn heart-button ${store.favorites.includes(person.result.properties.name) ? "btn-light" : "btn-outline-light"}`}><i className="far fa-heart"></i></button>
+                                    <button onClick={() => {
+                                        !store.favorites.includes(person.result.properties.name) ?
+                                            actions.addFavorite(person.result.properties.name) : ""
+                                    }} type="button" className={`btn heart-button ${store.favorites.includes(person.result.properties.name) ? "btn-light" : "btn-outline-light"}`}><i className="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </li>

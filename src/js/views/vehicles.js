@@ -17,17 +17,17 @@ export const Vehicles = () => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <ul className="mx-auto w-75 h-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
+                <ul className="mx-auto w-75 h-scrollbar vehicles-scrollbar" style={{ listStyleType: "none", padding: 0, display: "flex", width: "100%", overflowX: "auto" }}>
                     {vehicles.map((vehicle) => (
 
                         <li key={vehicle.uid}>
-                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.7)' }}>
+                            <div className="card" style={{ width: '18rem', marginRight: '2rem', backgroundColor: 'rgba(29, 30, 31, 0.6)' }}>
                                 <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.result.uid}.jpg`}
                                     onError={(e) => {
                                         e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
                                     }}
                                     className="card-img-top" alt="star wars vehicle" />
-                                <div className="card-body">
+                                <div className="card-body" style={{ height: '250px' }}>
                                     <h5 className="card-title">{vehicle.result.properties.name}</h5>
                                     <p className="card-text">model: {vehicle.result.properties.model}</p>
                                     <p className="card-text">length: {vehicle.result.properties.length}</p>

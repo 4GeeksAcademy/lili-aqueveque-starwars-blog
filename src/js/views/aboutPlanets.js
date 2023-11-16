@@ -22,15 +22,18 @@ export const AboutPlanets = () => {
 			{param && param.result.properties.name ? (
 
 				<div>
-					<div className="card mb-4 mx-auto mt-4" style={{ maxWidth: '1300px', backgroundColor: 'rgba(29, 30, 31, 0.7)' }} >
+					<div className="card mb-4 mx-auto mt-4" style={{ maxWidth: '1300px', backgroundColor: 'rgba(29, 30, 31, 0.6)' }} >
 						<div className="row g-0">
 							<div className="col-md-4">
-								<img src={`https://starwars-visualguide.com/assets/img/planets/${param.result.uid}.jpg`} className="img-fluid rounded-start" alt="Star wars item" />
+								<img src={`https://starwars-visualguide.com/assets/img/planets/${param.result.uid}.jpg`}
+									onError={(e) => {
+										e.target.src = groguPlaceholder; // Use the variable directly, not inside curly braces
+									}} className="img-fluid rounded-start" alt="Star wars item" />
 							</div>
 							<div className="col-md-8">
 								<div className="card-body">
 									<h5 className="card-title" style={{ color: '#FCFCFD' }}>{param.result.properties.name}</h5>
-									<p className="card-text" style={{ color: '#B3B5B5' }}>A mysterious child pursued by bounty hunters on behalf of Imperial interests, the foundling Grogu found protection with the Mandalorian Din Djarin. Through their adventures and journeys through the galaxy, young Grogu is honing remarkable abilities. Although he previously trained as a Jedi, Grogu has chosen to return to Din's side and continues to share his adventures as they take a stand against the Imperial remnant.</p>
+									<p className="card-text" style={{ color: '#B3B5B5' }}>Coruscant is the vibrant heart and capital of the galaxy during the age of the Empire, featuring a diverse mix of cultures and citizens spread over hundreds of levels. Once the home of the main Jedi Temple -- the central hub of Jedi training and learning for over a thousand generations and the repository of the Jedi Archives -- these traditions ended when the planet bore witness to Order 66.</p>
 								</div>
 							</div>
 						</div>
@@ -71,7 +74,7 @@ export const AboutPlanets = () => {
 			) : ""}
 
 			<Link to="/">
-				<button className="btn btn-primary ms-5">Back home</button>
+				<button className="btn btn-primary ms-5 back-home">Back home</button>
 			</Link>
 
 

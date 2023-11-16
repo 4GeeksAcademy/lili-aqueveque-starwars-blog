@@ -4,6 +4,11 @@ body {
     background-attachment: fixed;
     color: white;
 }
-.heart-button{
+.heart-button {
     margin-left: 15px;
+}
+.back-home {
+    background-color: #F8AC0F;
+    color: black;
+    border: none;
 }

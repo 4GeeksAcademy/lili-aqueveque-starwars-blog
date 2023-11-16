@@ -22,7 +22,7 @@ export const AboutVehicles = () => {
 			{param && param.result.properties.name ? (
 
 				<div>
-					<div className="card mb-4 mx-auto mt-4" style={{ maxWidth: '1300px', backgroundColor: 'rgba(29, 30, 31, 0.7)' }} >
+					<div className="card mb-4 mx-auto mt-4" style={{ maxWidth: '1300px', backgroundColor: 'rgba(29, 30, 31, 0.6)' }} >
 						<div className="row g-0">
 							<div className="col-md-4">
 								<img src={`https://starwars-visualguide.com/assets/img/vehicles/${param.result.uid}.jpg`} className="img-fluid rounded-start" alt="Star wars item" />
@@ -30,7 +30,7 @@ export const AboutVehicles = () => {
 							<div className="col-md-8">
 								<div className="card-body">
 									<h5 className="card-title" style={{ color: '#FCFCFD' }}>{param.result.properties.name}</h5>
-									<p className="card-text" style={{ color: '#B3B5B5' }}>A mysterious child pursued by bounty hunters on behalf of Imperial interests, the foundling Grogu found protection with the Mandalorian Din Djarin. Through their adventures and journeys through the galaxy, young Grogu is honing remarkable abilities. Although he previously trained as a Jedi, Grogu has chosen to return to Din's side and continues to share his adventures as they take a stand against the Imperial remnant.</p>
+									<p className="card-text" style={{ color: '#B3B5B5' }}>Sandcrawlers are huge treaded fortresses used by Jawas as transportation and shelter. The sand-pitted vehicles, many meters in height, are equipped with a magnetic suction tube for sucking droids and scrap into their cargo chambers.</p>
 								</div>
 							</div>
 						</div>
@@ -71,7 +71,7 @@ export const AboutVehicles = () => {
 			) : ""}
 
 			<Link to="/">
-				<button className="btn btn-primary ms-5">Back home</button>
+				<button className="btn btn-primary ms-5 back-home">Back home</button>
 			</Link>
 
 
