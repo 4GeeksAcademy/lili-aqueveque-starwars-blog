@@ -3,8 +3,8 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "public", "env": { "BASENAME": "/" } }
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
     }
   ],
   
