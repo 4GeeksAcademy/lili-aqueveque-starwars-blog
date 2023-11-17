@@ -1,5 +1,5 @@
 <img src="https://img.shields.io/badge/Star%20Wars%20Blog-black?style=flat-square&logo=starship"/>
-### Information:
+Information:
 - Check out my website in action by clicking on this link:
 
 
